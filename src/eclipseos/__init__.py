@@ -1,2 +1,4 @@
-def main() -> None:
-    print("Hello from eclipseos!")
+# def main() -> None:
+#     print("Hello from eclipseos!")
+
+from eclipseos.main import main
