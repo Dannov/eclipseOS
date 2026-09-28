@@ -1,24 +1,22 @@
-from eclipseos.commands.fast_fetch import FastFetch, fast_fetch
-from eclipseos.commands.shutdown import Power, shutdown, reboot
-
+from eclipseos.commands.fast_fetch import fast_fetch
+from eclipseos.commands.shutdown import shutdown, reboot
+from eclipseos.games.rock_paper_scissors import rock_paper_scissors
 
 def main():
 
     while True:
-        answer = str(input('~> '))
+        answer = (input('~> ')).lower().strip()
 
-        if answer == 'fastfetch' or answer == 'neofetch':
+        if answer in ('fastfetch', 'neofetch'):
             fast_fetch.execute()
-
-        elif answer == 'sudo shutdown' or answer == 'shutdown':
+        elif answer in ('rock paper scissors', 'rps'):
+            rock_paper_scissors.execute()
+        elif answer in ('sudo shutdown', 'shutdown'):
             shutdown.execute(answer)
-
-        elif answer == 'sudo reboot' or answer == 'reboot':
+        elif answer in ('sudo reboot', 'reboot'):
             reboot.execute(answer)
-
         elif answer == 'exit':
             break
-
         else:
             print('command not found')
             continue
