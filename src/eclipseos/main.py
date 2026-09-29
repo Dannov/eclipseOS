@@ -4,6 +4,9 @@ from eclipseos.games.rock_paper_scissors import rock_paper_scissors
 
 def main():
 
+    with open("file.txt", "w"):
+        pass
+
     while True:
         answer = (input('~> ')).lower().strip()
 
