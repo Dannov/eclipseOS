@@ -1,10 +1,17 @@
+from eclipseos.commands.help import AddToCommands
 from cpuinfo import get_cpu_info
 
 class FastFetch:
-    def __init__(self, os_name: str, os_version: str):
+    def __init__(self, os_name, os_version, command, description):
         self.os_name = os_name
         self.os_version = os_version
         self.cpu = get_cpu_info()["brand_raw"]
+
+        self.command = command
+        self.description = description
+
+        add_command = AddToCommands(self.command, self.description)
+        add_command.execute()
 
     def execute(self):
         print(f'''
@@ -24,4 +31,4 @@ class FastFetch:
         ⠀⠀⠀⠀⠀⠙⠻⣿⣿⣷⣷⣯⣔⡿⣃⠦⡵⣠⠠⢤⣤⠿⠋⠀⠀⠀⠀
         ⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠓⠿⠽⣷⣿⣾⡿⠞⠛⠉⠀⠀⠀      ''')
 
-fast_fetch = FastFetch('eclipse.os', '1.0')
+fast_fetch = FastFetch('eclipse.os', '1.0', 'fastfetch / neofetch', 'shows info')

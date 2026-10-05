@@ -1,8 +1,15 @@
+from eclipseos.commands.help import AddToCommands
 import random
 
 class RockPaperScissors:
-    def __init__(self):
+    def __init__(self, command, description):
         self.bot = random.choice(['rock', 'paper', 'scissors'])
+
+        self.command = command
+        self.description = description
+
+        add_command = AddToCommands(self.command, self.description)
+        add_command.execute()
 
     def execute(self):
         human = input('>> ')
@@ -19,4 +26,4 @@ class RockPaperScissors:
         else:
             print(f'You won\nbot: {self.bot}\nhuman: {human}')
 
-rock_paper_scissors = RockPaperScissors()
+rock_paper_scissors = RockPaperScissors('rock_paper_scissors / rps', 'start a rock paper scissors game')

@@ -1,16 +1,14 @@
-from eclipseos.commands.fast_fetch import fast_fetch
-from eclipseos.commands.shutdown import shutdown, reboot
-from eclipseos.games.rock_paper_scissors import rock_paper_scissors
+from .commands import fast_fetch, help_command, shutdown, reboot
+from .games import rock_paper_scissors
 
 def main():
-
-    with open("file.txt", "w"):
-        pass
 
     while True:
         answer = (input('~> ')).lower().strip()
 
-        if answer in ('fastfetch', 'neofetch'):
+        if answer in ('help', 'h'):
+            help_command.execute()
+        elif answer in ('fastfetch', 'neofetch'):
             fast_fetch.execute()
         elif answer in ('rock paper scissors', 'rps'):
             rock_paper_scissors.execute()

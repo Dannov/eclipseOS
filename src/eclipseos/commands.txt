@@ -1,0 +1,5 @@
+help: runs this command
+fastfetch / neofetch: shows info
+shutdown: turns off the pc
+reboot: reboots off the pc
+rock_paper_scissors / rps: start a rock paper scissors game
