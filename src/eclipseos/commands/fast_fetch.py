@@ -1,5 +1,6 @@
 from eclipseos.commands.help import AddToCommands
 from cpuinfo import get_cpu_info
+from importlib.metadata import version
 
 class FastFetch:
     def __init__(self, os_name, os_version, command, description):
@@ -31,4 +32,4 @@ class FastFetch:
         ⠀⠀⠀⠀⠀⠙⠻⣿⣿⣷⣷⣯⣔⡿⣃⠦⡵⣠⠠⢤⣤⠿⠋⠀⠀⠀⠀
         ⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠓⠿⠽⣷⣿⣾⡿⠞⠛⠉⠀⠀⠀      ''')
 
-fast_fetch = FastFetch('eclipse.os', '1.0', 'fastfetch / neofetch', 'shows info')
+fast_fetch = FastFetch('eclipse.os', version, 'fastfetch / neofetch', 'shows info')
