@@ -1,11 +1,12 @@
+commands = []
+
 class AddToCommands:
     def __init__(self, command, description):
         self.command = command
         self.description = description
 
     def execute(self):
-        with open('src/eclipseos/commands.txt', 'a') as file:
-            file.write(str(self.command + ': ' + self.description + '\n'))
+        commands.append(str(self.command + ': ' + self.description))
 
 class Help:
     def __init__(self, command, description):
@@ -15,7 +16,6 @@ class Help:
         add_command.execute()
 
     def execute(self):
-        with open('src/eclipseos/commands.txt', 'r') as file:
-            print(file.read())
+        print('\n'.join(commands))
 
 help_command = Help('help', 'runs this command')

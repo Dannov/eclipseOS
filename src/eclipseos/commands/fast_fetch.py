@@ -32,4 +32,4 @@ class FastFetch:
         ⠀⠀⠀⠀⠀⠙⠻⣿⣿⣷⣷⣯⣔⡿⣃⠦⡵⣠⠠⢤⣤⠿⠋⠀⠀⠀⠀
         ⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠓⠿⠽⣷⣿⣾⡿⠞⠛⠉⠀⠀⠀      ''')
 
-fast_fetch = FastFetch('eclipse.os', version, 'fastfetch / neofetch', 'shows info')
+fast_fetch = FastFetch('eclipse.os', version('eclipseos'), 'fastfetch / neofetch', 'shows info')
